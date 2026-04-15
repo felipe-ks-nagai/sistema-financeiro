@@ -12,6 +12,9 @@
   "license": "MIT",
   "type": "commonjs",
   "dependencies": {
-    "electron": "^41.1.1"
+    "electron": "^41.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }

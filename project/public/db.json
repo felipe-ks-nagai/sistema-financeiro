@@ -1,0 +1,10 @@
+{
+    "users":[
+
+    ],
+    "financier":[
+        {"id": 1, "valor": 150, "data": "01/04", "categoria": "Alimentação", "descricao": "Mercado" },
+        {"id": 2, "valor": 30, "data": "02/04", "categoria": "Transporte", "descricao": "Uber" }
+        
+    ]
+}
