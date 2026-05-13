@@ -182,3 +182,20 @@
     border-right-color: var(--border);
   }
 }
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 40px 20px;
+  justify-content: center;
+}
+
+.input-create{
+  width: 160px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+
