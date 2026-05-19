@@ -32,3 +32,21 @@ export async function deleteFinancier(id:number) {
     }
 }
 
+export async function createFinancier(financier: {valor: number, data: string, categoria: string, descricao: string}) {
+    try{
+        const request: RequestInfo = new Request(`${API}financier`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(financier)
+        })
+        const response = await fetch(request);
+        const data = await response.json();
+        console.log(data);
+        return data;
+    }
+    catch(err){
+        console.error(err);
+    }
+}

@@ -198,4 +198,13 @@
   border: 1px solid #ccc;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+
 
