@@ -1,5 +1,13 @@
 {
   "users": [],
-  "financier": [],
+  "financier": [
+    {
+      "valor": 333,
+      "data": "2121-02-12",
+      "categoria": "2sdadasdsa",
+      "descricao": "dsadasdasdas",
+      "id": "gJ5WIn7NGwk"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

@@ -206,5 +206,25 @@
   margin-top: 16px;
 }
 
+.gasto20 {
+  color: #22c55e;
+}
+
+.gasto40 {
+  color: #3b82f6;
+}
+
+.gasto60 {
+  color: #f59e0b;
+}
+
+.gasto80 {
+  color: #ef4444;
+}
+
+.acima80 {
+  color: #b91c1c;
+}
+
 
 

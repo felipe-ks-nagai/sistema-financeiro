@@ -50,3 +50,48 @@ export async function createFinancier(financier: {valor: number, data: string, c
         console.error(err);
     }
 }
+
+
+export async function createUser(user: {username: string, password: string, id: number}) {
+    try{
+        user.id = (await getUsersCount()) + 1; // Gerar um ID único para o novo usuário 
+        const request: RequestInfo = new Request(`${API}users`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        const response = await fetch(request);
+        const data = await response.json();
+        console.log(data);
+        return data;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+export async function getUsersCount(){
+    try{
+        const res = await fetch(API + "users");
+        const data = await res.json();
+        console.log(data)
+        return data.length;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+export async function getUsers(){
+    try{
+        const res = await fetch(API + "users");
+        const data = await res.json();
+        console.log(data)
+        return data;
+    }
+    catch(err){
+        console.error(err);
+    }
+}

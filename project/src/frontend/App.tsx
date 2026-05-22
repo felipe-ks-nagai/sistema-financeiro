@@ -20,6 +20,7 @@ function App() {
   const [totalProvis, settotalProvis] = useState<number>(0);
   const quantPage = 5;
   const [currentPage, setCurrentPage] = useState<number>(1);
+  
 
 
   // inputs de criacao
@@ -46,6 +47,13 @@ function App() {
     const total = dados.reduce((acc, item) => acc + item.valor, 0);
     settotalProvis(total + Number(e.target.value));
   };  
+
+  const calculoPorcentagem = (valor: number): string => {
+    const total = dados.reduce((acc, item) => acc + item.valor, 0);
+    if (total === 0) return '0%';
+    const porcentagem = (valor / total) * 100;
+    return `${porcentagem.toFixed(2)}%`;
+  }
 
   // useEffect para carregar os dados ao montar o componente
   useEffect(() => {
@@ -86,7 +94,9 @@ function App() {
             const cumulativeTotal = dados.slice(0, index + 1).reduce((acc, item) => acc + item.valor, 0);
             return (
               <tr key={element.id}>
-                <td>{element.valor}</td>
+                <td className={calculoPorcentagem(element.valor) <= '20%' ? 'gasto20' : calculoPorcentagem(element.valor) <= '40%' ? 'gasto40' : calculoPorcentagem(element.valor) <= '60%' ? 'gasto60' : calculoPorcentagem(element.valor) <= '80%' ? 'gasto80' : 'acima80'}>
+                  {element.valor}
+                </td>
                 <td>{element.data}</td>
                 <td>{element.categoria}</td>
                 <td>{element.descricao}</td>
